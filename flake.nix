@@ -23,6 +23,7 @@
         builtins.fetchClosure {
           fromStore = "https://cache.cerberusnetworks.io";
           fromPath = path;
+          inputAddressed = true;
         };
     in
     {
