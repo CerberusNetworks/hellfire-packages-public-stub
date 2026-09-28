@@ -30,16 +30,15 @@
       packages = forAllSystems (system: {
         hellfire-client = mkPackage system "hellfire-client";
         hellfire-server = mkPackage system "hellfire-server";
-        host-ctr        = mkPackage system "host-ctr";
-        service-ctr     = mkPackage system "service-ctr";
+        hellfire-ctr    = mkPackage system "hellfire-ctr";
+        
       });
 
       overlays.default = final: prev: {
         hellfirePackages = {
           hellfire-client = mkPackage final.system "hellfire-client";
           hellfire-server = mkPackage final.system "hellfire-server";
-          host-ctr        = mkPackage final.system "host-ctr";
-          service-ctr     = mkPackage final.system "service-ctr";
+          hellfire-ctr    = mkPackage final.system "hellfire-ctr";
         };
       };
     };
